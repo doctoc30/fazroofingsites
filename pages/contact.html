@@ -3,1047 +3,671 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armitstead Barnett | Premium Estate Agents & Chartered Surveyors</title>
+    <title>Saxon Patios & Driveways | Premium Outdoor Transformations in Bristol</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            /* Luxury Color Palette - Replace with your exact brand colors */
-            --primary-dark: #1a1a1a;
-            --primary-gold: #b89d5c;
-            --primary-light: #f8f7f4;
-            --secondary-gray: #6c757d;
-            --accent-green: #2e4f3b;
-            --white: #ffffff;
-            
-            /* Fonts */
-            --font-heading: 'Cormorant Garamond', serif;
-            --font-body: 'Inter', sans-serif;
-            
-            /* Spacing */
-            --section-padding: 80px 0;
-            --container-width: 1200px;
-            
-            /* Transitions */
-            --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        html {
-            scroll-behavior: smooth;
+
+        :root {
+            --primary: #1a472a;
+            --primary-dark: #0f301a;
+            --secondary: #d4af37;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --dark: #343a40;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
         }
-        
+
         body {
-            font-family: var(--font-body);
-            color: var(--primary-dark);
-            background-color: var(--white);
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
+            color: #333;
             overflow-x: hidden;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            font-weight: 500;
-            line-height: 1.2;
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
         }
-        
+
         .container {
             width: 100%;
-            max-width: var(--container-width);
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #c19b2c;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
         /* Header & Navigation */
         header {
+            background-color: white;
+            box-shadow: var(--shadow);
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
+            top: 0;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            transition: var(--transition-smooth);
-            padding: 15px 0;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
         }
-        
-        header.scrolled {
-            padding: 10px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 20px;
         }
-        
+
         .logo {
-            font-family: var(--font-heading);
+            font-family: 'Montserrat', sans-serif;
             font-size: 28px;
-            font-weight: 600;
-            color: var(--primary-dark);
+            font-weight: 700;
+            color: var(--primary);
             text-decoration: none;
-            display: flex;
-            align-items: center;
         }
-        
+
         .logo span {
-            color: var(--primary-gold);
+            color: var(--secondary);
         }
-        
-        .logo-icon {
-            margin-right: 8px;
-            font-size: 24px;
-            color: var(--primary-gold);
-        }
-        
-        .main-nav ul {
+
+        .nav-links {
             display: flex;
             list-style: none;
         }
-        
-        .main-nav li {
+
+        .nav-links li {
             margin-left: 30px;
         }
-        
-        .main-nav a {
+
+        .nav-links a {
             text-decoration: none;
-            color: var(--primary-dark);
-            font-weight: 500;
-            font-size: 15px;
-            transition: var(--transition-smooth);
-            position: relative;
-            padding: 5px 0;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
         }
-        
-        .main-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--primary-gold);
-            transition: var(--transition-smooth);
+
+        .nav-links a:hover {
+            color: var(--primary);
         }
-        
-        .main-nav a:hover::after {
-            width: 100%;
-        }
-        
-        .main-nav a:hover {
-            color: var(--primary-gold);
-        }
-        
-        .cta-button {
-            background-color: var(--primary-gold);
-            color: var(--white);
-            border: none;
-            padding: 12px 28px;
-            font-family: var(--font-body);
-            font-weight: 500;
-            font-size: 15px;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            border-radius: 2px;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .cta-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(184, 157, 92, 0.2);
-        }
-        
+
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
             font-size: 24px;
-            color: var(--primary-dark);
+            color: var(--primary);
             cursor: pointer;
         }
-        
+
         /* Hero Section */
         .hero {
-            height: 100vh;
-            min-height: 800px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            margin-top: 70px;
+        }
+
+        .hero-content {
             display: flex;
             align-items: center;
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
-        
-        .hero-content {
-            max-width: 800px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 40px;
         }
-        
-        .hero-content.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .hero h1 {
-            font-size: 64px;
+
+        .hero-text h1 {
+            font-size: 42px;
             margin-bottom: 20px;
-            font-weight: 400;
+            color: white;
         }
-        
-        .hero h1 span {
-            color: var(--primary-gold);
-            font-weight: 600;
-        }
-        
-        .hero p {
+
+        .hero-text p {
             font-size: 18px;
-            margin-bottom: 40px;
-            max-width: 600px;
+            margin-bottom: 30px;
             opacity: 0.9;
         }
-        
-        /* Search Section */
-        .search-section {
-            background-color: var(--primary-light);
-            padding: 60px 0;
-            margin-top: -100px;
-            position: relative;
-            z-index: 10;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transform: translateY(50px);
-            opacity: 0;
-            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        .hero-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
         }
-        
-        .search-section.visible {
-            transform: translateY(0);
-            opacity: 1;
+
+        .form-title {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 24px;
         }
-        
-        .search-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+
+        .form-group {
+            margin-bottom: 20px;
         }
-        
-        .search-box {
-            position: relative;
-        }
-        
-        .search-box label {
+
+        .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--primary-dark);
-            font-size: 14px;
+            color: var(--dark);
+            font-weight: 600;
         }
-        
-        .search-select {
+
+        .form-control {
             width: 100%;
-            padding: 14px 20px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            background-color: var(--white);
-            font-family: var(--font-body);
-            font-size: 15px;
-            appearance: none;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            border-radius: 2px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: var(--transition);
         }
-        
-        .search-select:hover {
-            border-color: var(--primary-gold);
-        }
-        
-        .search-select:focus {
+
+        .form-control:focus {
             outline: none;
-            border-color: var(--primary-gold);
-            box-shadow: 0 0 0 2px rgba(184, 157, 92, 0.2);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(26, 71, 42, 0.2);
         }
-        
-        .search-box::after {
-            content: '\f078';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            right: 20px;
-            top: 40px;
-            color: var(--secondary-gray);
-            pointer-events: none;
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: #f8f9fa;
         }
-        
-        .search-button {
-            grid-column: 1 / -1;
-            justify-self: center;
-            margin-top: 10px;
-        }
-        
-        /* Properties Section */
+
         .section-title {
             text-align: center;
             margin-bottom: 60px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        
-        .section-title.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
+
         .section-title h2 {
-            font-size: 42px;
+            font-size: 36px;
+            color: var(--primary);
             margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
         }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 2px;
-            background-color: var(--primary-gold);
-        }
-        
+
         .section-title p {
-            color: var(--secondary-gray);
-            max-width: 600px;
+            color: var(--gray);
+            max-width: 700px;
             margin: 0 auto;
         }
-        
-        .properties {
-            padding: var(--section-padding);
-        }
-        
-        .properties-grid {
+
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
-            margin-bottom: 50px;
         }
-        
-        .property-card {
-            background-color: var(--white);
-            border-radius: 5px;
+
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition-smooth);
-            opacity: 0;
-            transform: translateY(30px);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
         }
-        
-        .property-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .property-card:hover {
+
+        .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
-        .property-image {
-            height: 250px;
+
+        .service-img {
+            height: 200px;
+            background-color: #eee;
             background-size: cover;
             background-position: center;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Testimonial */
+        .testimonial {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 50px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
             position: relative;
         }
-        
-        .property-badge {
+
+        .testimonial-content:before {
+            content: "\201C";
+            font-size: 120px;
+            color: var(--secondary);
+            opacity: 0.3;
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: var(--primary-gold);
-            color: var(--white);
-            padding: 5px 15px;
-            font-size: 13px;
-            font-weight: 500;
-            border-radius: 2px;
+            top: -30px;
+            left: 30px;
+            font-family: serif;
         }
-        
-        .property-content {
-            padding: 25px;
-        }
-        
-        .property-title {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-        
-        .property-location {
-            color: var(--secondary-gray);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .property-location i {
-            margin-right: 8px;
-            color: var(--primary-gold);
-        }
-        
-        .property-features {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .feature {
-            text-align: center;
-        }
-        
-        .feature i {
-            display: block;
+
+        .testimonial-text {
             font-size: 20px;
-            color: var(--primary-gold);
-            margin-bottom: 5px;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: var(--dark);
         }
-        
-        .feature span {
-            font-size: 14px;
-            color: var(--secondary-gray);
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 18px;
         }
-        
-        .property-price {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-        }
-        
-        .view-property {
-            color: var(--primary-gold);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            transition: var(--transition-smooth);
-        }
-        
-        .view-property i {
-            margin-left: 8px;
-            transition: var(--transition-smooth);
-        }
-        
-        .view-property:hover {
-            color: var(--primary-dark);
-        }
-        
-        .view-property:hover i {
-            transform: translateX(5px);
-        }
-        
-        /* Journal Section */
-        .journal {
-            background-color: var(--primary-light);
-            padding: var(--section-padding);
-        }
-        
-        .journal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .journal-card {
-            background-color: var(--white);
-            border-radius: 5px;
-            overflow: hidden;
-            transition: var(--transition-smooth);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .journal-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .journal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .journal-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .journal-content {
-            padding: 25px;
-        }
-        
-        .journal-date {
-            font-size: 14px;
-            color: var(--primary-gold);
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .journal-title {
-            font-size: 20px;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-        
-        .journal-excerpt {
-            color: var(--secondary-gray);
-            margin-bottom: 20px;
-            font-size: 15px;
-        }
-        
-        .read-more {
-            color: var(--primary-gold);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .read-more i {
-            margin-left: 8px;
-            transition: var(--transition-smooth);
-        }
-        
-        .read-more:hover i {
-            transform: translateX(5px);
-        }
-        
+
         /* About Section */
         .about {
-            padding: var(--section-padding);
-            background-color: var(--white);
+            padding: 100px 0;
+            background-color: #f8f9fa;
         }
-        
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
+
         .about-content {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
         }
-        
-        .about-content.visible {
-            opacity: 1;
-            transform: translateX(0);
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
         }
-        
-        .about-image {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .about-image.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 5px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about h2 {
-            font-size: 42px;
+
+        .about-text h2 {
+            font-size: 36px;
+            color: var(--primary);
             margin-bottom: 20px;
         }
-        
-        .about p {
-            margin-bottom: 25px;
-            color: var(--secondary-gray);
+
+        .about-features {
+            flex: 1;
+            min-width: 300px;
         }
-        
-        .stats {
+
+        .feature {
             display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
+            align-items: flex-start;
+            margin-bottom: 30px;
         }
-        
-        .stat {
-            text-align: center;
+
+        .feature-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 24px;
         }
-        
-        .stat-number {
-            font-size: 36px;
-            font-weight: 600;
-            color: var(--primary-gold);
-            margin-bottom: 5px;
+
+        /* Contact Buttons */
+        .contact-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            z-index: 999;
         }
-        
-        .stat-label {
-            font-size: 14px;
-            color: var(--secondary-gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+
+        .contact-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-decoration: none;
         }
-        
+
+        .contact-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+        }
+
+        .call-btn {
+            background-color: var(--primary);
+        }
+
         /* Footer */
         footer {
             background-color: var(--primary-dark);
-            color: var(--white);
+            color: white;
             padding: 70px 0 30px;
         }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             margin-bottom: 50px;
         }
-        
-        .footer-logo {
-            font-family: var(--font-heading);
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--white);
-            text-decoration: none;
-            display: inline-block;
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding-right: 20px;
         }
-        
-        .footer-logo span {
-            color: var(--primary-gold);
-        }
-        
-        .footer-about p {
-            color: rgba(255, 255, 255, 0.7);
+
+        .footer-column h3 {
+            font-size: 20px;
             margin-bottom: 25px;
-        }
-        
-        .footer-heading {
-            font-size: 18px;
-            margin-bottom: 25px;
+            color: white;
             position: relative;
             padding-bottom: 10px;
         }
-        
-        .footer-heading::after {
+
+        .footer-column h3:after {
             content: '';
             position: absolute;
-            bottom: 0;
             left: 0;
-            width: 40px;
+            bottom: 0;
+            width: 50px;
             height: 2px;
-            background-color: var(--primary-gold);
+            background-color: var(--secondary);
         }
-        
-        .footer-links ul {
+
+        .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 12px;
         }
-        
+
         .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+            color: #ddd;
             text-decoration: none;
-            transition: var(--transition-smooth);
-            display: inline-flex;
-            align-items: center;
+            transition: var(--transition);
         }
-        
+
         .footer-links a:hover {
-            color: var(--primary-gold);
-            transform: translateX(5px);
+            color: var(--secondary);
+            padding-left: 5px;
         }
-        
-        .footer-links i {
-            margin-right: 10px;
-            font-size: 14px;
-            width: 20px;
-            text-align: center;
-        }
-        
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .footer-contact i {
-            margin-right: 10px;
-            color: var(--primary-gold);
-            margin-top: 4px;
-        }
-        
+
         .copyright {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
+            color: #aaa;
             font-size: 14px;
         }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Responsive Styles */
+
+        /* Mobile Responsive */
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 52px;
-            }
-            
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .about-content, .about-image {
-                transform: translateY(20px);
-            }
-            
-            .about-image.visible, .about-content.visible {
-                transform: translateY(0);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .main-nav {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                padding: 20px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition-smooth);
-            }
-            
-            .main-nav.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .main-nav ul {
+            .hero-content {
                 flex-direction: column;
             }
             
-            .main-nav li {
-                margin: 0 0 15px 0;
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                margin-left: 0;
             }
             
             .mobile-menu-btn {
                 display: block;
             }
             
-            .hero h1 {
-                font-size: 42px;
+            .hero {
+                padding: 150px 0 80px;
             }
             
-            .properties-grid, .journal-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .search-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .section-title h2 {
+            .hero-text h1 {
                 font-size: 32px;
             }
             
-            .search-section {
-                margin-top: -50px;
-                padding: 40px 0;
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .testimonial-content {
+                padding: 40px 20px;
+            }
+            
+            .contact-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .contact-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 28px;
+            }
+            
+            .hero-form {
+                padding: 30px 20px;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+            }
+            
+            .section-title h2 {
+                font-size: 26px;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header & Navigation -->
-    <header id="header">
+    <header>
         <div class="container header-container">
-            <a href="#" class="logo">
-                <i class="fas fa-crown logo-icon"></i>
-                Armitstead<span>Barnett</span>
-            </a>
+            <a href="#" class="logo">SAXON<span>PATIOS</span></a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
             
-            <nav class="main-nav" id="mainNav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#properties">Properties</a></li>
-                    <li><a href="#journal">Journal</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            
-            <a href="#contact" class="cta-button">Get Valuation</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="btn btn-primary">Get Quote</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Lead Form -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content" id="heroContent">
-                <h1>Aspire for more... <span>Beyond the ordinary</span></h1>
-                <p>Premier estate agents, rural chartered surveyors and valuers serving Lancashire, Cumbria and North Yorkshire with excellence for over 40 years.</p>
-                <a href="#properties" class="cta-button">Explore Properties</a>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Transform Your Outdoor Space With Premium Patio Solutions</h1>
+                <p>With over 20 years of experience, Saxon Patios delivers exceptional garden and landscaping services across Bristol, Bath, and South Gloucestershire at affordable prices.</p>
+                <a href="#services" class="btn">Our Services</a>
+            </div>
+            
+            <div class="hero-form">
+                <h3 class="form-title">Get Your Free Quote Today</h3>
+                <form id="leadForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Your Phone Number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Your Email Address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" class="form-control" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="patio">Patio Installation</option>
+                            <option value="driveway">Paved Driveways</option>
+                            <option value="gravel">Gravel Driveways</option>
+                            <option value="fencing">Fencing</option>
+                            <option value="pergola">Pergolas</option>
+                            <option value="turfing">Turfing</option>
+                            <option value="other">Other Service</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Request Free Quote</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Search Section -->
-    <section class="search-section" id="searchSection">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
-            <div class="search-container">
-                <div class="search-box">
-                    <label for="sale-type">For Sale/To Let</label>
-                    <select id="sale-type" class="search-select">
-                        <option>For Sale</option>
-                        <option>To Let</option>
-                    </select>
+            <div class="section-title">
+                <h2>Our Premium Services</h2>
+                <p>We offer a comprehensive range of garden and landscaping services to transform any outdoor space</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Patio Installation</h3>
+                        <p>Professional patio design and installation using high-quality materials for lasting beauty and functionality.</p>
+                    </div>
                 </div>
                 
-                <div class="search-box">
-                    <label for="property-type">Property Type</label>
-                    <select id="property-type" class="search-select">
-                        <option>Residential</option>
-                        <option>Agricultural</option>
-                        <option>Developments</option>
-                    </select>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1560518888-9c7b21e8e3c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Paved Driveways</h3>
+                        <p>Durable and attractive paved driveways that enhance your property's curb appeal and value.</p>
+                    </div>
                 </div>
                 
-                <div class="search-box">
-                    <label for="distance">Distance</label>
-                    <select id="distance" class="search-select">
-                        <option>Within 5 miles</option>
-                        <option>Within 10 miles</option>
-                        <option>Within 20 miles</option>
-                        <option>Within 30 miles</option>
-                    </select>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Gravel Driveways</h3>
+                        <p>Cost-effective and low-maintenance gravel driveway solutions with professional installation.</p>
+                    </div>
                 </div>
                 
-                <div class="search-box">
-                    <label for="min-price">Minimum Price</label>
-                    <select id="min-price" class="search-select">
-                        <option>£100,000</option>
-                        <option>£250,000</option>
-                        <option>£500,000</option>
-                        <option>£750,000</option>
-                        <option>£1,000,000</option>
-                    </select>
-                </div>
-                
-                <div class="search-box">
-                    <label for="max-price">Maximum Price</label>
-                    <select id="max-price" class="search-select">
-                        <option>£500,000</option>
-                        <option>£1,000,000</option>
-                        <option>£2,000,000</option>
-                        <option>£3,000,000</option>
-                        <option>£5,000,000+</option>
-                    </select>
-                </div>
-                
-                <div class="search-button">
-                    <button class="cta-button">Search Properties</button>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Fencing</h3>
+                        <p>Privacy and security fencing installations using durable materials suited to your property's style.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Properties -->
-    <section class="properties" id="properties">
+    <!-- Testimonial Section -->
+    <section class="testimonial" id="testimonials">
         <div class="container">
-            <div class="section-title" id="propertiesTitle">
-                <h2>Featured Properties</h2>
-                <p>Discover our exclusive selection of premium properties across Lancashire, Cumbria and North Yorkshire</p>
-            </div>
-            
-            <div class="properties-grid">
-                <div class="property-card" id="property1">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')">
-                        <span class="property-badge">For Sale</span>
-                    </div>
-                    <div class="property-content">
-                        <h3 class="property-title">Vanguard Wharf, Lytham</h3>
-                        <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i> Lytham St. Annes, Lancashire
-                        </div>
-                        <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i>
-                                <span>5 Bedrooms</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i>
-                                <span>6 Bathrooms</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-ruler-combined"></i>
-                                <span>4,200 sq ft</span>
-                            </div>
-                        </div>
-                        <div class="property-price">£2,750,000</div>
-                        <a href="#" class="view-property">View Details <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="property-card" id="property2">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')">
-                        <span class="property-badge">For Sale</span>
-                    </div>
-                    <div class="property-content">
-                        <h3 class="property-title">Clitheroe Road, Dutton</h3>
-                        <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i> Ribble Valley, Lancashire
-                        </div>
-                        <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i>
-                                <span>14 Bedrooms</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i>
-                                <span>7 Bathrooms</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-ruler-combined"></i>
-                                <span>12,500 sq ft</span>
-                            </div>
-                        </div>
-                        <div class="property-price">£4,250,000</div>
-                        <a href="#" class="view-property">View Details <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="property-card" id="property3">
-                    <div class="property-image" style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')">
-                        <span class="property-badge">To Let</span>
-                    </div>
-                    <div class="property-content">
-                        <h3 class="property-title">Lodge Lane, Lytham St. Annes</h3>
-                        <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i> Lytham St. Annes, Lancashire
-                        </div>
-                        <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i>
-                                <span>5 Bedrooms</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i>
-                                <span>5 Bathrooms</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-ruler-combined"></i>
-                                <span>3,800 sq ft</span>
-                            </div>
-                        </div>
-                        <div class="property-price">£4,500 pcm</div>
-                        <a href="#" class="view-property">View Details <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center;">
-                <a href="#" class="cta-button">View All Properties</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Journal Section -->
-    <section class="journal" id="journal">
-        <div class="container">
-            <div class="section-title" id="journalTitle">
-                <h2>Latest Journal</h2>
-                <p>Insights, updates and news from the world of premium property and rural surveying</p>
-            </div>
-            
-            <div class="journal-grid">
-                <div class="journal-card" id="journal1">
-                    <div class="journal-image" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')"></div>
-                    <div class="journal-content">
-                        <span class="journal-date">December 15, 2025</span>
-                        <h3 class="journal-title">Potential Large Scale Wind Farm Project to Hit Wyre and Preston Farmers</h3>
-                        <p class="journal-excerpt">Lancashire farmers and landowners in Wyre and Preston could soon feel the real cost and disruption of the drive towards net zero and renewable energy...</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="journal-card" id="journal2">
-                    <div class="journal-image" style="background-image: url('https://images.unsplash.com/photo-1416331108676-a22ccb276e35?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')"></div>
-                    <div class="journal-content">
-                        <span class="journal-date">November 28, 2025</span>
-                        <h3 class="journal-title">The First Three Months of my Apprenticeship</h3>
-                        <p class="journal-excerpt">As the days are getting shorter, the first three months of my apprenticeship have flown by. After completing two weeks work experience earlier this year...</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="journal-card" id="journal3">
-                    <div class="journal-image" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')"></div>
-                    <div class="journal-content">
-                        <span class="journal-date">November 15, 2025</span>
-                        <h3 class="journal-title">Renters' Rights Act 2025 – An Update</h3>
-                        <p class="journal-excerpt">The Government has now released their Roadmap for the Implementation of the Renters' Rights Act 2025, which will reform the Private Rented Sector...</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="#" class="cta-button">View All Articles</a>
+            <div class="testimonial-content">
+                <p class="testimonial-text">"I would highly recommend Saxon Patios. Our patio in Bristol was completely transformed and they did an amazing job. The team was professional, efficient, and the quality of work was exceptional."</p>
+                <p class="testimonial-author">— LUISA H., SAXON PATIOS CLIENT</p>
             </div>
         </div>
     </section>
@@ -1051,199 +675,153 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <div class="about-container">
-                <div class="about-content" id="aboutContent">
-                    <h2>40 Years of Excellence in Property</h2>
-                    <p>Founded in 1985, Armitstead Barnett has grown to become the leading independent estate agency and rural surveying practice in Northwest England.</p>
-                    <p>Our team of chartered surveyors, valuers and property experts bring unparalleled local knowledge combined with a commitment to exceptional service that goes beyond the ordinary.</p>
-                    <p>We specialize in premium residential properties, agricultural estates, land and development opportunities across Lancashire, Cumbria and North Yorkshire.</p>
-                    
-                    <div class="stats">
-                        <div class="stat">
-                            <div class="stat-number">40+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">£2.5B+</div>
-                            <div class="stat-label">Property Sold</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-label">Client Satisfaction</div>
-                        </div>
-                    </div>
+            <div class="section-title">
+                <h2>Why Choose Saxon Patios</h2>
+                <p>With over two decades of experience, we bring your outdoor vision to life with quality craftsmanship</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Over 20 Years Experience in Bristol & Surrounding Areas</h2>
+                    <p>At Saxon Patios, we are a Bristol-based company operating in every area of Bristol, Bath and South Gloucestershire. We offer a professional garden and landscaping service that can transform any area at affordable prices.</p>
+                    <p>We see every job as an opportunity to bring your vision to life. Our skilled tradesmen work with a large variety of materials that makes each garden unique, ensuring your outdoor space reflects your personal style and needs.</p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">Contact Us Today</a>
                 </div>
                 
-                <div class="about-image" id="aboutImage">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Armitstead Barnett Team">
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div>
+                            <h3>20+ Years Experience</h3>
+                            <p>Decades of expertise in patio and driveway installation across the Bristol region.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Local Service Area</h3>
+                            <p>Serving Bristol, Bath, and South Gloucestershire with reliable, local service.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div>
+                            <h3>Quality Materials</h3>
+                            <p>Working with premium materials including Avorio and Grigio Porcelain Slabs.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Buttons -->
+    <div class="contact-buttons">
+        <a href="https://wa.me/441234567890" class="contact-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+441234567890" class="contact-btn call-btn">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <div class="footer-container">
-                <div class="footer-about">
-                    <a href="#" class="footer-logo">Armitstead<span>Barnett</span></a>
-                    <p>Premier estate agents, rural chartered surveyors and valuers serving Lancashire, Cumbria and North Yorkshire with excellence for over 40 years.</p>
-                    <a href="#contact" class="cta-button">Get In Touch</a>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SAXON PATIOS</h3>
+                    <p>Professional garden and landscaping services transforming outdoor spaces across Bristol, Bath and South Gloucestershire for over 20 years.</p>
                 </div>
                 
-                <div class="footer-links">
-                    <h4 class="footer-heading">Quick Links</h4>
-                    <ul>
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#properties"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="#journal"><i class="fas fa-chevron-right"></i> Journal</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Patio Installation</a></li>
+                        <li><a href="#">Gravel Driveways</a></li>
+                        <li><a href="#">Patio Maintenance</a></li>
+                        <li><a href="#">Sleeper Installation</a></li>
+                        <li><a href="#">Fencing</a></li>
+                        <li><a href="#">Pergolas</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-contact">
-                    <h4 class="footer-heading">Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 12 Market Square, Clitheroe, Lancashire, BB7 2DA</p>
-                    <p><i class="fas fa-phone"></i> 01200 422 522</p>
-                    <p><i class="fas fa-envelope"></i> info@abarnett.co.uk</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 9am-5:30pm, Sat: 10am-4pm</p>
-                    
-                    <div class="social-links" style="margin-top: 20px;">
-                        <a href="#" style="color: rgba(255,255,255,0.7); margin-right: 15px; font-size: 20px;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="color: rgba(255,255,255,0.7); margin-right: 15px; font-size: 20px;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: rgba(255,255,255,0.7); margin-right: 15px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="color: rgba(255,255,255,0.7); font-size: 20px;"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Bristol, UK</li>
+                        <li><i class="fas fa-phone" style="margin-right: 10px;"></i> +44 1234 567890</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@saxonpatios.co.uk</li>
+                        <li><i class="fas fa-clock" style="margin-right: 10px;"></i> Mon-Fri: 8am-6pm</li>
+                    </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Armitstead Barnett. All rights reserved. | Estate Agents, Rural Chartered Surveyors and Valuers</p>
+                <p>&copy; <span id="currentYear">2026</span> Saxon Patios. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
         });
         
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        
-        // Observe elements for animation
-        const elementsToObserve = [
-            document.getElementById('heroContent'),
-            document.getElementById('searchSection'),
-            document.getElementById('propertiesTitle'),
-            document.getElementById('property1'),
-            document.getElementById('property2'),
-            document.getElementById('property3'),
-            document.getElementById('journalTitle'),
-            document.getElementById('journal1'),
-            document.getElementById('journal2'),
-            document.getElementById('journal3'),
-            document.getElementById('aboutContent'),
-            document.getElementById('aboutImage')
-        ];
-        
-        elementsToObserve.forEach(element => {
-            if (element) observer.observe(element);
-        });
-        
-        // Initialize hero content as visible
-        setTimeout(() => {
-            document.getElementById('heroContent').classList.add('visible');
-        }, 300);
-        
-        // Search form functionality
-        const searchButton = document.querySelector('.search-button .cta-button');
-        searchButton.addEventListener('click', () => {
-            const saleType = document.getElementById('sale-type').value;
-            const propertyType = document.getElementById('property-type').value;
-            const distance = document.getElementById('distance').value;
-            const minPrice = document.getElementById('min-price').value;
-            const maxPrice = document.getElementById('max-price').value;
+        // Form submission
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            alert(`Searching for: ${saleType} ${propertyType} properties within ${distance}, price range ${minPrice} - ${maxPrice}`);
+            // Get form data
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
             
-            // In a real implementation, this would redirect to search results
-            // window.location.href = `/search?type=${propertyType}&min=${minPrice}&max=${maxPrice}`;
+            // In a real implementation, you would send this data to a server
+            // For demo purposes, we'll show an alert
+            alert(`Thank you ${name}! Your quote request for ${service} has been received. We will contact you at ${phone} or ${email} within 24 hours.`);
+            
+            // Reset form
+            document.getElementById('leadForm').reset();
+            
+            // Scroll to top for better UX
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
-        // Smooth scrolling for anchor links
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
-                if (targetElement) {
+                
+                if(targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                    
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
-                    if (mainNav.classList.contains('active')) {
-                        mainNav.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
                 }
             });
         });
-        
-        // Property card interaction
-        document.querySelectorAll('.property-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                if (!e.target.classList.contains('view-property') && !e.target.closest('.view-property')) {
-                    this.querySelector('.view-property').click();
-                }
-            });
-        });
-        
-        // Staggered animation for property cards
-        setTimeout(() => {
-            document.getElementById('property1').style.transitionDelay = '0.1s';
-            document.getElementById('property2').style.transitionDelay = '0.2s';
-            document.getElementById('property3').style.transitionDelay = '0.3s';
-            
-            document.getElementById('journal1').style.transitionDelay = '0.1s';
-            document.getElementById('journal2').style.transitionDelay = '0.2s';
-            document.getElementById('journal3').style.transitionDelay = '0.3s';
-        }, 100);
     </script>
 </body>
 </html>

@@ -280,61 +280,58 @@
         </a>
     </div>
 
+    <script>
+        // GENERATE DATA FOR ALL 50 CONCEPTS
+        const concepts = Array.from({length: 50}, (_, i) => {
+            const num = i + 1;
+            return {
+                code: `D${num}`,
+                // UPDATED: Using images from fazroofingsites repository
+                image: `https://raw.githubusercontent.com/doctoc30/fazroofingsites/main/images/${num}.jpg`,
+                // CORRECTED: Using 'roofers' folder
+                url: `https://doctoc30.github.io/fazroofingsites/roofers/concept-${num}.html`
+            };
+        });
 
+        let currentPage = 1;
+        const perPage = 4;
 
-   <script>
-    // GENERATE DATA FOR ALL 50 CONCEPTS
-    const concepts = Array.from({length: 50}, (_, i) => {
-        const num = i + 1;
-        return {
-            code: `D${num}`,
-            // Dynamically sets the image URL for all 50 items (1.jpg to 50.jpg)
-            image: `https://raw.githubusercontent.com/doctoc30/fazhoq/main/images/${num}.jpg`,
-            // CORRECTED: Using 'roofers' folder (not 'roofing')
-            url: `https://doctoc30.github.io/fazroofingsites/roofers/concept-${num}.html`
-        };
-    });
-
-    let currentPage = 1;
-    const perPage = 4;
-
-    function toggleMenu() { 
-        document.getElementById('app-menu-layer').classList.toggle('active'); 
-    }
-
-    function render() {
-        const grid = document.getElementById('conceptsGrid');
-        const start = (currentPage - 1) * perPage;
-        const items = concepts.slice(start, start + perPage);
-        
-        grid.innerHTML = items.map(item => `
-            <div class="concept-card">
-                <div class="concept-image-wrap">
-                    <img src="${item.image}" alt="Concept ${item.code}" onerror="this.src='https://via.placeholder.com/800x1200?text=Concept+Image+Coming+Soon'" loading="lazy">
-                </div>
-                <div class="concept-footer">
-                    <button class="view-btn" onclick="window.location.href='${item.url}'">View Concept</button>
-                    <div class="concept-code-label">CODE: ${item.code}</div>
-                </div>
-            </div>
-        `).join('');
-        
-        document.getElementById('pageNumber').innerText = currentPage;
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-
-    function changePage(dir) {
-        const max = Math.ceil(concepts.length / perPage);
-        const next = currentPage + dir;
-        if(next >= 1 && next <= max) { 
-            currentPage = next; 
-            render(); 
+        function toggleMenu() { 
+            document.getElementById('app-menu-layer').classList.toggle('active'); 
         }
-    }
 
-    window.onload = render;
-</script>
+        function render() {
+            const grid = document.getElementById('conceptsGrid');
+            const start = (currentPage - 1) * perPage;
+            const items = concepts.slice(start, start + perPage);
+            
+            grid.innerHTML = items.map(item => `
+                <div class="concept-card">
+                    <div class="concept-image-wrap">
+                        <img src="${item.image}" alt="Concept ${item.code}" onerror="this.src='https://via.placeholder.com/800x1200?text=Concept+Image+Coming+Soon'" loading="lazy">
+                    </div>
+                    <div class="concept-footer">
+                        <button class="view-btn" onclick="window.location.href='${item.url}'">View Concept</button>
+                        <div class="concept-code-label">CODE: ${item.code}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('pageNumber').innerText = currentPage;
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
 
- 
+        function changePage(dir) {
+            const max = Math.ceil(concepts.length / perPage);
+            const next = currentPage + dir;
+            if(next >= 1 && next <= max) { 
+                currentPage = next; 
+                render(); 
+            }
+        }
+
+        window.onload = render;
+    </script>
+
 </body>
 </html>

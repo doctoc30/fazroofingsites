@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>FAZ HOQ | Concept Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-light: #FFF5EE;
+            --bg: #FFFFFF;
+            --text: #121212;
+            --safe-top: env(safe-area-inset-top);
+            --safe-bottom: env(safe-area-inset-bottom);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html, body {
+            background-color: var(--primary-light);
+            color: var(--text);
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* FULLY TRANSPARENT FLOATING HEADER */
+        .faz-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2500;
+            padding: calc(var(--safe-top) + 20px) 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            pointer-events: none;
+        }
+
+        .faz-logo {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            color: var(--primary);
+            text-decoration: none;
+            line-height: 1;
+            pointer-events: auto;
+        }
+        .faz-logo span { color: #000; }
+
+        #menu-btn {
+            font-size: 1.8rem;
+            color: var(--text);
+            background: none;
+            border: none;
+            cursor: pointer;
+            line-height: 1;
+            pointer-events: auto;
+        }
+
+        /* PREVENT SCROLL SQUEEZE ON DOCK */
+        .app-dock {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: var(--primary);
+            height: 80px !important; 
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 9000;
+            padding-bottom: var(--safe-bottom);
+            flex-shrink: 0;
+            box-shadow: 0 -10px 30px rgba(255,107,0,0.3);
+        }
+        
+        .dock-btn {
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            flex: 1;
+            height: 100%;
+            justify-content: center;
+        }
+        .dock-btn i { font-size: 1.8rem; }
+        .dock-btn span {
+            font-size: 0.65rem;
+            font-weight: 800;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+
+        /* CONTENT */
+        .content-main {
+            padding-top: 130px; 
+            padding-bottom: 120px; 
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 10px 25px 30px;
+        }
+
+        .huge-text {
+            font-size: clamp(2.5rem, 10vmin, 3.5rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -3px;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .concepts-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        /* MOBILE FRAME */
+        .concept-card {
+            width: 100%;
+            max-width: 350px; 
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            margin-bottom: 50px;
+            border-radius: 35px; 
+            border: 10px solid #1a1a1a; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .concept-image-wrap {
+            width: 100%;
+            height: 60vh; 
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .concept-image-wrap img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .concept-footer {
+            padding: 20px 15px 25px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .view-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 40px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+        }
+
+        .concept-code-label {
+            margin-top: 10px;
+            font-weight: 900;
+            color: #ccc;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        /* PAGINATION */
+        .pagination-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 40px;
+        }
+
+        .page-arrow {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* MENU LAYER */
+        #app-menu-layer {
+            position: fixed;
+            inset: 0;
+            background: var(--primary-light);
+            z-index: 9500;
+            display: flex;
+            flex-direction: column;
+            padding: calc(var(--safe-top) + 20px) 25px;
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+        #app-menu-layer.active { transform: translateY(0); }
+        .menu-item { font-size: 3.5rem; font-weight: 900; color: var(--text); text-decoration: none; text-align: center; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <nav class="faz-nav">
+        <a href="index.html" class="faz-logo">FAZ HOQ<span>.</span></a>
+        <button id="menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+
+    <div id="app-menu-layer">
+        <div class="flex justify-between items-center mb-10">
+            <div class="faz-logo">FAZ HOQ<span>.</span></div>
+            <div onclick="toggleMenu()" class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center text-xl cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="flex flex-col flex-1 justify-center">
+            <a href="index.html" class="menu-item">HOME</a>
+            <a href="index.html" class="menu-item">ABOUT</a>
+            <a href="concepts.html" class="menu-item" style="color: var(--primary);">CONCEPTS</a>
+            <a href="mailto:Fazhoq1977@gmail.com" class="menu-item">CONTACT</a>
+        </div>
+    </div>
+
+    <main class="content-main">
+        <div class="hero-section">
+            <h1 class="huge-text">Design<br><span style="color: #000;">Library.</span></h1>
+        </div>
+        <div class="concepts-container" id="conceptsGrid"></div>
+        <div class="pagination-nav">
+            <button class="page-arrow" onclick="changePage(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <span id="pageNumber" style="font-weight: 900; font-size: 1.2rem;">1</span>
+            <button class="page-arrow" onclick="changePage(1)"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <div class="app-dock">
+        <a href="concepts.html" class="dock-btn">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>CONCEPTS</span>
+        </a>
+        <a href="https://wa.me/447706345874" class="dock-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WHATSAPP</span>
+        </a>
+        <a href="sms:07706345874" class="dock-btn">
+            <i class="fa-solid fa-comment"></i>
+            <span>TEXT</span>
+        </a>
+        <a href="mailto:Fazhoq1977@gmail.com" class="dock-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>EMAIL</span>
+        </a>
+    </div>
+
+    <script>
+        // GENERATE DATA FOR ALL 50 CONCEPTS
+        const concepts = Array.from({length: 50}, (_, i) => {
+            const num = i + 1;
+            return {
+                code: `D${num}`,
+                // Dynamically sets the image URL for all 50 items (1.jpg to 50.jpg)
+                image: `https://raw.githubusercontent.com/doctoc30/fazhoq/main/images/${num}.jpg`,
+                // Every concept button redirects to its specific page
+                url: `https://doctoc30.github.io/fazhoq/driving-school/concept-${num}.html`
+            };
+        });
+
+        let currentPage = 1;
+        const perPage = 4;
+
+        function toggleMenu() { document.getElementById('app-menu-layer').classList.toggle('active'); }
+
+        function render() {
+            const grid = document.getElementById('conceptsGrid');
+            const start = (currentPage - 1) * perPage;
+            const items = concepts.slice(start, start + perPage);
+            
+            grid.innerHTML = items.map(item => `
+                <div class="concept-card">
+                    <div class="concept-image-wrap">
+                        <img src="${item.image}" alt="Concept ${item.code}" onerror="this.src='https://via.placeholder.com/800x1200?text=Concept+Image+Coming+Soon'" loading="lazy">
+                    </div>
+                    <div class="concept-footer">
+                        <button class="view-btn" onclick="window.location.href='${item.url}'">View Concept</button>
+                        <div class="concept-code-label">CODE: ${item.code}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.getElementById('pageNumber').innerText = currentPage;
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function changePage(dir) {
+            const max = Math.ceil(concepts.length / perPage);
+            const next = currentPage + dir;
+            if(next >= 1 && next <= max) { currentPage = next; render(); }
+        }
+
+        window.onload = render;
+    </script>
+</body>
+</html>

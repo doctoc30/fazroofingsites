@@ -98,7 +98,7 @@
             cursor: pointer;
         }
 
-        /* TEXT STYLES - Adjusting for congestion */
+        /* TEXT STYLES */
         .text-wrap {
             width: 100%;
             max-width: 1200px;
@@ -106,7 +106,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-bottom: 60px; /* Pushes content up from the dock area */
+            margin-bottom: 60px;
         }
 
         .huge-text {
@@ -120,10 +120,12 @@
         .huge-text.black { color: #000; }
 
         .waving-hand {
-            width: clamp(190px, 50vw, 320px); /* Slightly smaller to reduce congestion */
+            width: clamp(190px, 50vw, 320px);
             height: auto;
             margin-bottom: 15px;
             mix-blend-mode: multiply;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .category-header {
@@ -169,7 +171,7 @@
         /* SWIPE COUNTER */
         .swipe-counter {
             position: fixed;
-            bottom: 95px; /* Lifted slightly */
+            bottom: 95px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -195,10 +197,10 @@
             border-radius: 12px;
         }
 
-        /* GLOBAL LEGAL FOOTER - Visible across all cards */
+        /* GLOBAL LEGAL FOOTER */
         .global-legal-links {
             position: fixed;
-            bottom: 85px; /* Positioned between dock and counter dots */
+            bottom: 85px;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -270,6 +272,29 @@
         }
         #app-menu-layer.active { transform: translateY(0); }
         .menu-item { font-size: 3.5rem; font-weight: 900; color: var(--text); text-decoration: none; text-align: center; margin: 10px 0; }
+
+        /* FALLBACK AVATAR */
+        .avatar-fallback {
+            display: none;
+            width: clamp(190px, 50vw, 320px);
+            height: clamp(190px, 50vw, 320px);
+            border-radius: 50%;
+            background: var(--primary);
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: clamp(4rem, 10vmin, 6rem);
+            color: white;
+            font-weight: 900;
+        }
+        
+        img.error + .avatar-fallback {
+            display: flex;
+        }
+        
+        img.error {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -285,7 +310,8 @@
             <a href="#" class="menu-item" onclick="goToSlide(0); toggleMenu()">HOME</a>
             <a href="#" class="menu-item" onclick="goToSlide(1); toggleMenu()">ABOUT</a>
             <a href="#" class="menu-item" onclick="goToSlide(2); toggleMenu()">PROCESS</a>
-            <a href="https://doctoc30.github.io/fazroofingsites/concepts.html" class="menu-item" style="color: var(--primary);">CONCEPTS</a>
+            <!-- FIX: Concepts menu link - points to concepts page -->
+            <a href="concepts.html" class="menu-item" style="color: var(--primary);">CONCEPTS</a>
             <a href="mailto:Fazhoq1977@gmail.com" class="menu-item">CONTACT</a>
         </div>
     </div>
@@ -305,7 +331,9 @@
     <div class="slide-container" id="master-wrapper">
         <section class="active">
             <div class="text-wrap">
-                <img src="https://doctoc30.github.io/fazroofingsites/images/IMG_5431.png" alt="Faz Hoq" class="waving-hand">
+                <!-- FIX: Image path - using 'Images' with capital I -->
+                <img src="https://doctoc30.github.io/fazroofingsites/Images/IMG_5431.png" alt="Faz Hoq" class="waving-hand" onerror="this.classList.add('error')">
+                <div class="avatar-fallback">FH</div>
                 <h1 class="huge-text">I build websites for:</h1>
                 <div class="huge-text black" id="typewriter">&nbsp;</div>
             </div>
@@ -316,7 +344,7 @@
                 <h2 class="category-header">Industry Specialist</h2>
                 <h2 class="huge-text" style="text-transform:uppercase">THE GO-TO<br><span class="black">GUY.</span></h2>
                 <p style="font-size: 1.15rem; font-weight: 600; margin-top: 20px; max-width: 600px; line-height: 1.4;">
-                    I’m passionate about helping <strong>roofers</strong> thrive online. I don't just design websites—I create tools that keep your diary full.
+                    I'm passionate about helping <strong>roofers</strong> thrive online. I don't just design websites—I create tools that keep your diary full.
                 </p>
             </div>
         </section>
@@ -354,7 +382,8 @@
     </div>
 
     <div class="app-dock">
-        <a href="https://doctoc30.github.io/fazroofingsites/concepts.html" class="dock-btn">
+        <!-- FIX: Concepts dock link - points to concepts page -->
+        <a href="concepts.html" class="dock-btn">
             <i class="fa-solid fa-layer-group"></i>
             <span>CONCEPTS</span>
         </a>

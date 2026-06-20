@@ -282,7 +282,7 @@
 
 
 
-    <script>
+   <script>
     // GENERATE DATA FOR ALL 50 CONCEPTS
     const concepts = Array.from({length: 50}, (_, i) => {
         const num = i + 1;
@@ -290,8 +290,8 @@
             code: `D${num}`,
             // Dynamically sets the image URL for all 50 items (1.jpg to 50.jpg)
             image: `https://raw.githubusercontent.com/doctoc30/fazhoq/main/images/${num}.jpg`,
-            // FIXED: Changed from 'driving-school' to 'roofing' - each button now redirects to roofing concept pages
-            url: `https://doctoc30.github.io/fazroofingsites/roofing/concept-${num}.html`
+            // CORRECTED: Using 'roofers' folder (not 'roofing')
+            url: `https://doctoc30.github.io/fazroofingsites/roofers/concept-${num}.html`
         };
     });
 

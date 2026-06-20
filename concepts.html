@@ -69,7 +69,7 @@
             pointer-events: auto;
         }
 
-        /* PREVENT SCROLL SQUEEZE ON DOCK */
+        /* DOCK */
         .app-dock {
             position: fixed;
             bottom: 0;
@@ -179,6 +179,12 @@
             text-transform: uppercase;
             border: none;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .view-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(255,107,0,0.3);
         }
 
         .concept-code-label {
@@ -209,6 +215,16 @@
             justify-content: center;
             border: none;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .page-arrow:hover {
+            transform: scale(1.1);
+        }
+
+        .page-arrow:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
         }
 
         /* MENU LAYER */
@@ -242,10 +258,10 @@
             </div>
         </div>
         <div class="flex flex-col flex-1 justify-center">
-            <a href="index.html" class="menu-item">HOME</a>
-            <a href="index.html" class="menu-item">ABOUT</a>
-            <a href="concepts.html" class="menu-item" style="color: var(--primary);">CONCEPTS</a>
-            <a href="mailto:Fazhoq1977@gmail.com" class="menu-item">CONTACT</a>
+            <a href="index.html" class="menu-item" onclick="toggleMenu()">HOME</a>
+            <a href="index.html#about" class="menu-item" onclick="toggleMenu()">ABOUT</a>
+            <a href="concepts.html" class="menu-item" style="color: var(--primary);" onclick="toggleMenu()">CONCEPTS</a>
+            <a href="mailto:Fazhoq1977@gmail.com" class="menu-item" onclick="toggleMenu()">CONTACT</a>
         </div>
     </div>
 
@@ -255,9 +271,9 @@
         </div>
         <div class="concepts-container" id="conceptsGrid"></div>
         <div class="pagination-nav">
-            <button class="page-arrow" onclick="changePage(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="page-arrow" id="prevBtn" onclick="changePage(-1)"><i class="fa-solid fa-chevron-left"></i></button>
             <span id="pageNumber" style="font-weight: 900; font-size: 1.2rem;">1</span>
-            <button class="page-arrow" onclick="changePage(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="page-arrow" id="nextBtn" onclick="changePage(1)"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     </main>
 
@@ -281,22 +297,24 @@
     </div>
 
     <script>
-        // GENERATE DATA FOR ALL 50 CONCEPTS
+        // GENERATE DATA FOR ALL 50 CONCEPTS - FIXED URLS
         const concepts = Array.from({length: 50}, (_, i) => {
             const num = i + 1;
             return {
                 code: `D${num}`,
-                // Dynamically sets the image URL for all 50 items (1.jpg to 50.jpg)
-                image: `https://raw.githubusercontent.com/doctoc30/fazhoq/main/images/${num}.jpg`,
-                // Every concept button redirects to its specific page
-                url: `https://doctoc30.github.io/fazhoq/driving-school/concept-${num}.html`
+                // FIX: Using correct image path from your repository
+                image: `https://doctoc30.github.io/fazroofingsites/images/concept-${num}.jpg`,
+                // FIX: Using correct URL path to your concept folders
+                url: `https://doctoc30.github.io/fazroofingsites/concepts/concept-${num}/`
             };
         });
 
         let currentPage = 1;
         const perPage = 4;
 
-        function toggleMenu() { document.getElementById('app-menu-layer').classList.toggle('active'); }
+        function toggleMenu() { 
+            document.getElementById('app-menu-layer').classList.toggle('active'); 
+        }
 
         function render() {
             const grid = document.getElementById('conceptsGrid');
@@ -316,13 +334,22 @@
             `).join('');
             
             document.getElementById('pageNumber').innerText = currentPage;
+            
+            // Update pagination buttons
+            const max = Math.ceil(concepts.length / perPage);
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === max;
+            
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
         function changePage(dir) {
             const max = Math.ceil(concepts.length / perPage);
             const next = currentPage + dir;
-            if(next >= 1 && next <= max) { currentPage = next; render(); }
+            if(next >= 1 && next <= max) { 
+                currentPage = next; 
+                render(); 
+            }
         }
 
         window.onload = render;

@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PeakRoof · Modern Roofing 2026</title>
-  <!-- Font & icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+  <title>PeakRoof · Master the roof</title>
+  <!-- Font & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -17,65 +15,15 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: #fafbfc;
-      color: #1e293b;
+      background: #fcf9f5;
+      color: #1e1e1e;
       overflow-x: hidden;
     }
+    a { text-decoration: none; color: inherit; }
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 24px;
-    }
-    /* buttons */
-    .btn-primary {
-      background: #d43b2b;
-      color: white;
-      border: none;
-      padding: 14px 32px;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      transition: 0.2s;
-      box-shadow: 0 8px 20px rgba(212, 59, 43, 0.25);
-    }
-    .btn-primary:hover {
-      background: #b92f20;
-      transform: scale(1.02);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid white;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.2s;
-      cursor: pointer;
-    }
-    .btn-outline:hover {
-      background: white;
-      color: #1e293b;
-    }
-    .btn-secondary {
-      background: #1e293b;
-      color: white;
-      border: none;
-      padding: 14px 32px;
-      border-radius: 60px;
-      font-weight: 700;
-      transition: 0.2s;
-      cursor: pointer;
-    }
-    .btn-secondary:hover {
-      background: #0f172a;
     }
     /* scroll animation */
     .reveal {
@@ -87,565 +35,453 @@
       opacity: 1;
       transform: translateY(0);
     }
+    /* buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.25s;
+      background: #d4a373;
+      color: #1e1e1e;
+      box-shadow: 0 8px 20px rgba(212, 163, 115, 0.3);
+    }
+    .btn-primary {
+      background: #1e1e1e;
+      color: #fcf9f5;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .btn-primary i { color: #d4a373; }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #1e1e1e;
+      box-shadow: none;
+    }
+    .btn i { font-size: 1.2rem; }
+    .btn:hover { transform: scale(1.03); opacity: 0.9; }
+
     /* header */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      padding: 20px 0;
       flex-wrap: wrap;
     }
-    .logo svg {
-      height: 44px;
-      width: auto;
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
     }
+    .logo span { color: #d4a373; }
     .nav-links {
       display: flex;
       gap: 32px;
-      font-weight: 600;
-      font-size: 0.95rem;
+      font-weight: 500;
     }
-    .nav-links a {
-      text-decoration: none;
-      color: #1e293b;
-    }
-    .nav-links a:hover {
-      color: #d43b2b;
-    }
-    .header-cta {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
+    .nav-links a { transition: 0.2s; border-bottom: 2px solid transparent; padding-bottom: 4px; }
+    .nav-links a:hover { border-bottom-color: #d4a373; }
+    .nav-cta { display: flex; gap: 12px; align-items: center; }
+
     /* hero */
     .hero {
+      padding: 40px 0 60px;
+      background: linear-gradient(145deg, #f3ede8 0%, #e8dfd7 100%);
+      border-radius: 0 0 40px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 40px;
       align-items: center;
-      padding: 40px 0 70px;
     }
-    .hero-left h1 {
-      font-size: 3.4rem;
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
       font-weight: 800;
       line-height: 1.1;
-      letter-spacing: -0.02em;
+      letter-spacing: -1px;
     }
-    .hero-left h1 span {
-      color: #d43b2b;
-    }
+    .hero h1 span { color: #b68b5c; }
     .hero-sub {
       font-size: 1.2rem;
-      color: #475569;
-      margin: 24px 0 32px;
+      margin: 20px 0 30px;
+      color: #3d3d3d;
       max-width: 90%;
     }
-    .hero-buttons {
+    .hero-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 32px;
+      gap: 24px;
+      margin-top: 30px;
     }
-    .trust-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 28px;
-      background: white;
-      padding: 16px 24px;
-      border-radius: 60px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-    }
-    .trust-item {
+    .badge-item {
       display: flex;
       align-items: center;
       gap: 8px;
-      font-weight: 600;
+      background: rgba(255,255,255,0.6);
+      padding: 8px 18px;
+      border-radius: 60px;
       font-size: 0.9rem;
+      font-weight: 500;
+      backdrop-filter: blur(4px);
     }
-    .trust-item i {
-      color: #d43b2b;
-      font-size: 1.1rem;
-    }
-    .hero-right {
+    .badge-item i { color: #d4a373; }
+    .hero-form {
       background: white;
-      padding: 32px 28px;
-      border-radius: 32px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+      padding: 32px;
+      border-radius: 28px;
+      box-shadow: 0 30px 50px rgba(0,0,0,0.07);
     }
-    .hero-right h3 {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-    .hero-right p {
-      color: #64748b;
-      margin-bottom: 20px;
-    }
-    .form-group {
-      margin-bottom: 16px;
-    }
-    .form-group input, .form-group select {
+    .hero-form h3 { font-size: 1.4rem; margin-bottom: 16px; }
+    .hero-form input, .hero-form select, .hero-form textarea {
       width: 100%;
       padding: 14px 16px;
-      border: 1px solid #e2e8f0;
-      border-radius: 20px;
+      margin-bottom: 14px;
+      border: 1px solid #ddd;
+      border-radius: 16px;
       font-size: 0.95rem;
-      background: #f8fafc;
-      transition: 0.2s;
+      background: #faf8f6;
     }
-    .form-group input:focus {
-      outline: none;
-      border-color: #d43b2b;
-      box-shadow: 0 0 0 3px rgba(212,59,43,0.15);
+    .hero-form .btn { width: 100%; justify-content: center; }
+    .hero-svg {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
     }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .quote-form .btn-primary {
-      width: 100%;
-      justify-content: center;
-      padding: 16px;
-    }
+
     /* sections */
-    section {
-      padding: 80px 0;
-    }
+    section { padding: 70px 0; }
     .section-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
     }
-    .section-sub {
-      color: #64748b;
-      font-size: 1.15rem;
-      max-width: 700px;
-      margin-bottom: 40px;
-    }
-    .card-grid {
+    .section-title span { color: #b68b5c; }
+    .section-desc { max-width: 600px; color: #555; margin-bottom: 40px; }
+
+    /* services cards */
+    .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 24px;
     }
     .service-card {
       background: white;
-      padding: 28px 18px;
+      padding: 28px 20px;
       border-radius: 28px;
-      text-align: center;
       box-shadow: 0 8px 24px rgba(0,0,0,0.02);
-      transition: 0.25s;
-      border: 1px solid #f1f5f9;
-    }
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+      transition: 0.3s;
+      border: 1px solid #f0ece7;
+      text-align: center;
     }
     .service-card i {
       font-size: 2.6rem;
-      color: #d43b2b;
+      color: #d4a373;
       margin-bottom: 12px;
     }
-    .service-card h4 {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-    .service-card p {
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-top: 6px;
-    }
+    .service-card h4 { font-weight: 600; margin-bottom: 6px; }
+    .service-card p { font-size: 0.9rem; color: #5e5e5e; }
+
+    /* emergency */
     .emergency {
-      background: #1e293b;
-      color: white;
+      background: #1e1e1e;
+      color: #fcf9f5;
       border-radius: 48px;
-      padding: 48px 40px;
+      padding: 50px 40px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
     }
-    .emergency-left h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-    }
-    .emergency-left p {
-      opacity: 0.8;
-      margin: 8px 0 16px;
-    }
-    .emergency-phone {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    .emergency-phone i {
-      color: #d43b2b;
-      margin-right: 12px;
-    }
+    .emergency h2 { font-size: 2rem; }
+    .emergency .btn { background: #d4a373; color: #1e1e1e; }
+
+    /* before after gallery */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap: 20px;
     }
     .gallery-item {
       background: white;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
     .gallery-item img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
-      display: block;
-      background: #d1d5db;
+      background: #ddd;
     }
-    .gallery-item .desc {
-      padding: 16px 20px;
-    }
-    .gallery-item .desc h4 {
-      font-weight: 700;
-    }
-    .gallery-item .desc p {
-      font-size: 0.9rem;
-      color: #475569;
-    }
+    .gallery-item .info { padding: 16px; }
+    .gallery-item .info h4 { font-weight: 600; }
+
+    /* reviews */
     .review-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
       gap: 24px;
     }
     .review-card {
       background: white;
       padding: 24px;
       border-radius: 28px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+      border: 1px solid #efeae4;
     }
-    .review-card .stars {
-      color: #f59e0b;
-      letter-spacing: 2px;
-    }
-    .review-card p {
-      margin: 12px 0;
-      color: #334155;
-    }
-    .review-card .author {
-      font-weight: 600;
-    }
-    .area-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 16px;
-    }
-    .area-item {
+    .review-card .stars { color: #f5b342; margin: 8px 0; }
+    .review-card p { font-size: 0.95rem; }
+
+    /* quote form */
+    .quote-form {
       background: white;
-      padding: 20px;
+      padding: 40px;
+      border-radius: 40px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .quote-form .form-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .quote-form input, .quote-form select, .quote-form textarea, .quote-form .file-wrap {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #e0dad4;
       border-radius: 20px;
-      text-align: center;
-      font-weight: 600;
-      border: 1px solid #eef2f6;
+      background: #faf8f6;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
     }
-    .why-grid {
+    .quote-form .file-wrap {
+      padding: 10px 16px;
+      background: #f3ede8;
+    }
+
+    /* footer */
+    .footer {
+      background: #1e1e1e;
+      color: #ccc;
+      padding: 40px 0;
+      border-radius: 40px 40px 0 0;
+    }
+    .footer-grid {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 24px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 30px;
     }
-    .why-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 500;
-    }
-    .why-item i {
-      color: #d43b2b;
-      font-size: 1.4rem;
-    }
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .faq-item {
-      background: white;
-      padding: 20px 24px;
-      border-radius: 20px;
-      border: 1px solid #f1f5f9;
-    }
-    .faq-item h4 {
-      font-weight: 700;
-    }
-    .faq-item p {
-      color: #475569;
-      margin-top: 6px;
-    }
-    .map-wrap {
-      border-radius: 32px;
-      overflow: hidden;
-      height: 300px;
-      background: #cbd5e1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #475569;
-    }
+    .footer a { color: #bbb; transition: 0.2s; }
+    .footer a:hover { color: #d4a373; }
+
+    /* sticky mobile */
     .sticky-mobile {
-      display: none;
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
       background: white;
-      padding: 12px 20px;
-      box-shadow: 0 -8px 30px rgba(0,0,0,0.08);
+      padding: 12px 16px;
+      display: none;
       justify-content: space-around;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
       z-index: 999;
-      border-top: 1px solid #eef2f6;
+      border-top: 1px solid #eee;
     }
     .sticky-mobile a {
-      text-decoration: none;
-      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #1e293b;
-    }
-    .sticky-mobile .call {
-      color: #d43b2b;
-    }
-    .footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      padding: 48px 0;
-      margin-top: 40px;
-    }
-    .footer a {
-      color: #94a3b8;
-      text-decoration: none;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 40px;
-    }
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-left h1 { font-size: 2.6rem; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
-      .review-grid { grid-template-columns: 1fr; }
-      .area-grid { grid-template-columns: 1fr 1fr; }
-      .why-grid { grid-template-columns: 1fr 1fr; }
-      .faq-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .emergency { flex-direction: column; align-items: start; gap: 20px; }
-      .nav-links { display: none; }
-      .header-cta .btn-outline { display: none; }
-      .sticky-mobile { display: flex; }
-    }
-    @media (max-width: 600px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-      .area-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-    }
-    /* svg detail */
-    .svg-detail {
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40"><path d="M20 40 L40 20 L60 40 L40 60 Z" fill="%23d43b2b20"/><circle cx="50" cy="50" r="12" fill="%23d43b2b10"/></svg>') repeat;
-      opacity: 0.3;
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-    .relative { position: relative; }
-    .badge-icon {
-      background: #d43b2b10;
-      border-radius: 100px;
-      padding: 6px 14px;
-      font-size: 0.8rem;
       font-weight: 600;
-      color: #d43b2b;
+      color: #1e1e1e;
     }
+    .sticky-mobile i { font-size: 1.4rem; color: #d4a373; }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .sticky-mobile { display: flex; }
+      .hero-form { padding: 24px; }
+      .emergency { flex-direction: column; align-items: flex-start; gap: 20px; }
+    }
+    @media (max-width: 480px) {
+      .btn { padding: 12px 20px; font-size: 0.9rem; }
+      .section-title { font-size: 1.8rem; }
+    }
+    /* SVG decoration */
+    .svg-deco {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
+    .svg-deco svg { max-width: 100%; height: auto; }
   </style>
 </head>
 <body>
+  <!-- sticky mobile CTA -->
+  <div class="sticky-mobile">
+    <a href="tel:+441234567890"><i class="fas fa-phone-alt"></i> Call</a>
+    <a href="#quote"><i class="fas fa-file-invoice"></i> Quote</a>
+    <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+
+  <!-- header -->
   <div class="container">
-    <!-- header -->
     <nav class="navbar">
-      <div class="logo">
-        <svg viewBox="0 0 160 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="156" height="40" rx="12" fill="#d43b2b" />
-          <path d="M24 14 L36 14 L36 30 L24 30 Z" fill="white" />
-          <path d="M40 14 L52 14 L52 30 L40 30 Z" fill="white" />
-          <path d="M56 14 L68 14 L68 30 L56 30 Z" fill="white" />
-          <text x="80" y="28" font-family="Inter" font-weight="800" font-size="18" fill="white">PEAKROOF</text>
-        </svg>
-      </div>
+      <div class="logo">Peak<span>Roof</span></div>
       <div class="nav-links">
-        <a href="#">Home</a><a href="#">Services</a><a href="#">Gallery</a><a href="#">Reviews</a><a href="#">Areas</a><a href="#">Contact</a>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
       </div>
-      <div class="header-cta">
-        <a href="tel:+441234567890" style="text-decoration:none;font-weight:700;color:#1e293b;"><i class="fas fa-phone-alt" style="color:#d43b2b;"></i> (012) 345 6789</a>
-        <button class="btn-primary" style="padding:10px 24px;font-size:0.9rem;">Free Quote</button>
+      <div class="nav-cta">
+        <a href="tel:+441234567890" class="btn btn-outline" style="padding:10px 22px;"><i class="fas fa-phone"></i> Call</a>
+        <a href="#quote" class="btn btn-primary" style="padding:10px 22px;">Free Quote</a>
       </div>
     </nav>
   </div>
 
-  <!-- Hero -->
-  <div class="container relative">
-    <div class="svg-detail"></div>
-    <div class="hero reveal">
-      <div class="hero-left">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
         <h1>Professional Roofing Services in <span>London</span></h1>
-        <p class="hero-sub">Emergency repairs, roof replacements, and free inspections. 24/7 support.</p>
-        <div class="hero-buttons">
-          <a href="tel:+441234567890" class="btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
-          <button class="btn-secondary"><i class="fas fa-file-invoice"></i> Get a Free Quote</button>
+        <p class="hero-sub">Emergency repairs, roof replacements, and free inspections – available 24/7.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <a href="tel:+441234567890" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
+          <a href="#quote" class="btn"><i class="fas fa-file-signature"></i> Get a Free Quote</a>
         </div>
-        <div class="trust-badges">
-          <span class="trust-item"><i class="fas fa-shield-alt"></i> Fully insured</span>
-          <span class="trust-item"><i class="fas fa-certificate"></i> Licensed</span>
-          <span class="trust-item"><i class="fas fa-clock"></i> 15+ years</span>
-          <span class="trust-item"><i class="fas fa-check-circle"></i> 2,400+ projects</span>
+        <div class="hero-badges">
+          <span class="badge-item"><i class="fas fa-shield-alt"></i> Fully insured</span>
+          <span class="badge-item"><i class="fas fa-certificate"></i> Licensed</span>
+          <span class="badge-item"><i class="fas fa-clock"></i> 15+ years</span>
+          <span class="badge-item"><i class="fas fa-check-circle"></i> 2,400+ projects</span>
+        </div>
+        <!-- SVG graphic -->
+        <div class="svg-deco">
+          <svg width="160" height="60" viewBox="0 0 160 60" fill="none">
+            <path d="M10 40 L30 15 L50 30 L70 10 L90 28 L110 12 L130 35 L150 20" stroke="#b68b5c" stroke-width="4" stroke-linecap="round" />
+            <circle cx="30" cy="15" r="5" fill="#d4a373" />
+            <circle cx="90" cy="28" r="5" fill="#d4a373" />
+            <circle cx="150" cy="20" r="5" fill="#d4a373" />
+          </svg>
         </div>
       </div>
-      <div class="hero-right">
-        <h3>Get a free inspection</h3>
-        <p>No-obligation quote from our experts</p>
-        <form class="quote-form">
-          <div class="form-row">
-            <div class="form-group"><input type="text" placeholder="Full name" /></div>
-            <div class="form-group"><input type="tel" placeholder="Phone" /></div>
-          </div>
-          <div class="form-group"><input type="email" placeholder="Email address" /></div>
-          <div class="form-group"><select><option>Roof issue type</option><option>Leak</option><option>Replacement</option><option>Repair</option></select></div>
-          <button class="btn-primary"><i class="fas fa-paper-plane"></i> Send request</button>
-        </form>
+      <div class="hero-form" id="quote">
+        <h3><i class="fas fa-clipboard-list" style="color:#d4a373;"></i> Free Quote</h3>
+        <input type="text" placeholder="Full name" />
+        <input type="tel" placeholder="Phone" />
+        <input type="email" placeholder="Email" />
+        <input type="text" placeholder="Address" />
+        <select><option>Roof issue type</option><option>Leak</option><option>Replacement</option><option>Inspection</option></select>
+        <div class="file-wrap"><i class="fas fa-upload"></i> Upload photos (optional)</div>
+        <button class="btn btn-primary" style="width:100%; justify-content:center;"><i class="fas fa-paper-plane"></i> Submit</button>
+        <p style="font-size:0.75rem; margin-top:10px; color:#777;">No obligation. Free inspection.</p>
       </div>
-    </div>
-  </div>
-
-  <!-- Services -->
-  <section class="container reveal">
-    <h2 class="section-title">Our roofing services</h2>
-    <p class="section-sub">From repairs to full replacements – we cover all</p>
-    <div class="card-grid">
-      <div class="service-card"><i class="fas fa-tools"></i><h4>Roof repairs</h4><p>Fast & reliable</p></div>
-      <div class="service-card"><i class="fas fa-sync-alt"></i><h4>Full replacements</h4><p>Complete new roof</p></div>
-      <div class="service-card"><i class="fas fa-home"></i><h4>New installations</h4><p>New build roofing</p></div>
-      <div class="service-card"><i class="fas fa-water"></i><h4>Flat roofing</h4><p>EPDM, felt, GRP</p></div>
-      <div class="service-card"><i class="fas fa-mountain"></i><h4>Slate roofing</h4><p>Natural slate</p></div>
-      <div class="service-card"><i class="fas fa-th"></i><h4>Tile roofing</h4><p>Concrete & clay</p></div>
-      <div class="service-card"><i class="fas fa-industry"></i><h4>Metal roofing</h4><p>Steel, copper, zinc</p></div>
-      <div class="service-card"><i class="fas fa-chimney"></i><h4>Chimney repairs</h4><p>Flashing & pointing</p></div>
-      <div class="service-card"><i class="fas fa-gutter"></i><h4>Gutter install</h4><p>Seamless gutters</p></div>
-      <div class="service-card"><i class="fas fa-border-all"></i><h4>Fascias & soffits</h4><p>UPVC & timber</p></div>
-      <div class="service-card"><i class="fas fa-search"></i><h4>Inspections</h4><p>Drone & thermal</p></div>
-      <div class="service-card"><i class="fas fa-tint"></i><h4>Leak detection</h4><p>Moisture mapping</p></div>
-      <div class="service-card"><i class="fas fa-bolt"></i><h4>Storm damage</h4><p>Insurance claims</p></div>
-      <div class="service-card"><i class="fas fa-clock"></i><h4>Emergency call-outs</h4><p>24/7 response</p></div>
-      <div class="service-card"><i class="fas fa-building"></i><h4>Commercial roofing</h4><p>Offices & warehouses</p></div>
     </div>
   </section>
 
-  <!-- Emergency -->
+  <!-- SERVICES -->
+  <section id="services" class="container reveal">
+    <h2 class="section-title">Our <span>Services</span></h2>
+    <p class="section-desc">From emergency repairs to full replacements – we cover every roofing need.</p>
+    <div class="service-grid">
+      <div class="service-card"><i class="fas fa-tools"></i><h4>Roof Repairs</h4><p>Fast & durable fixes</p></div>
+      <div class="service-card"><i class="fas fa-home"></i><h4>Full Replacements</h4><p>Complete new roofs</p></div>
+      <div class="service-card"><i class="fas fa-building"></i><h4>New Installations</h4><p>From the ground up</p></div>
+      <div class="service-card"><i class="fas fa-water"></i><h4>Flat Roofing</h4><p>Modern flat systems</p></div>
+      <div class="service-card"><i class="fas fa-mountain"></i><h4>Slate & Tile</h4><p>Premium materials</p></div>
+      <div class="service-card"><i class="fas fa-bolt"></i><h4>Metal Roofing</h4><p>Durable & energy-wise</p></div>
+      <div class="service-card"><i class="fas fa-fire"></i><h4>Chimney Repairs</h4><p>Safety & structure</p></div>
+      <div class="service-card"><i class="fas fa-gutter"></i><h4>Gutters & Fascias</h4><p>Complete water systems</p></div>
+      <div class="service-card"><i class="fas fa-search"></i><h4>Inspections</h4><p>Detailed reports</p></div>
+      <div class="service-card"><i class="fas fa-biohazard"></i><h4>Leak Detection</h4><p>Advanced thermal</p></div>
+      <div class="service-card"><i class="fas fa-cloud-rain"></i><h4>Storm Damage</h4><p>Insurance claims</p></div>
+      <div class="service-card"><i class="fas fa-clock"></i><h4>24/7 Emergency</h4><p>Rapid response</p></div>
+    </div>
+  </section>
+
+  <!-- EMERGENCY -->
   <section class="container reveal">
     <div class="emergency">
-      <div class="emergency-left">
-        <h2><i class="fas fa-exclamation-triangle" style="color:#d43b2b;"></i> Roof leaking? Call us immediately</h2>
-        <p>24/7 emergency assistance • response within 60 min • all London areas</p>
-        <div class="emergency-phone"><i class="fas fa-phone-alt"></i> 0800 123 4567</div>
-      </div>
-      <button class="btn-primary" style="background:white;color:#1e293b;box-shadow:none;"><i class="fas fa-bolt"></i> Emergency call</button>
+      <div><h2><i class="fas fa-exclamation-triangle" style="color:#d4a373;"></i> 24/7 Emergency Roofing</h2><p>Roof leaking? Call us immediately for emergency assistance.<br><strong>Response time: 90 min</strong> · covering Greater London</p></div>
+      <a href="tel:+441234567890" class="btn" style="font-size:1.2rem;"><i class="fas fa-phone-alt"></i> Call now: 01234 567890</a>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section class="container reveal">
-    <h2 class="section-title">Before & After</h2>
-    <p class="section-sub">See our work – quality you can trust</p>
+  <!-- GALLERY before/after -->
+  <section id="gallery" class="container reveal">
+    <h2 class="section-title">Before <span>& After</span></h2>
+    <p class="section-desc">Real projects, real results.</p>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%23b0b5c0'/%3E%3Ctext x='20' y='120' fill='%231e293b' font-size='24' font-weight='bold'%3EBefore%3C/text%3E%3C/svg%3E" alt="before" /><div class="desc"><h4>Victorian slate roof</h4><p>Slate replacement • 3 days</p></div></div>
-      <div class="gallery-item"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%234a7c59'/%3E%3Ctext x='20' y='120' fill='white' font-size='24' font-weight='bold'%3EAfter%3C/text%3E%3C/svg%3E" alt="after" /><div class="desc"><h4>New slate & leadwork</h4><p>High-grade Welsh slate</p></div></div>
-      <div class="gallery-item"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%23b0b5c0'/%3E%3Ctext x='20' y='120' fill='%231e293b' font-size='24' font-weight='bold'%3EFlat roof before%3C/text%3E%3C/svg%3E" alt="flat before" /><div class="desc"><h4>Flat roof EPDM</h4><p>Full replacement • 2 days</p></div></div>
+      <div class="gallery-item"><img src="#" alt="before" style="background: #c0b0a0;" /><div class="info"><h4>Slate roof replacement</h4><p>Materials: Natural slate · 4 days</p></div></div>
+      <div class="gallery-item"><img src="#" alt="after" style="background: #b8a890;" /><div class="info"><h4>Flat roof new install</h4><p>EPDM rubber · 2 days</p></div></div>
+      <div class="gallery-item"><img src="#" alt="before" style="background: #a89888;" /><div class="info"><h4>Chimney + lead flashing</h4><p>Lead & mortar · 1 day</p></div></div>
+      <div class="gallery-item"><img src="#" alt="after" style="background: #b0a090;" /><div class="info"><h4>Tile roof repair</h4><p>Concrete tiles · 1.5 days</p></div></div>
     </div>
   </section>
 
-  <!-- Reviews -->
-  <section class="container reveal">
-    <h2 class="section-title">Customer reviews</h2>
+  <!-- REVIEWS -->
+  <section id="reviews" class="container reveal">
+    <h2 class="section-title">Customer <span>Reviews</span></h2>
     <div class="review-grid">
-      <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Amazing service, fixed our leak within hours. Highly recommend!"</p><div class="author">— Sarah K. <span class="badge-icon">Google</span></div></div>
-      <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"New roof installation, professional team, clean site. 10/10."</p><div class="author">— James P. <span class="badge-icon">Google</span></div></div>
-      <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>"Emergency call-out on Sunday, they arrived in 45min. Lifesaver!"</p><div class="author">— Maria D. <span class="badge-icon">Google</span></div></div>
+      <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Amazing service! Fixed my leak within hours." – Sarah K.</p></div>
+      <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Professional team, new roof looks fantastic." – James P.</p></div>
+      <div class="review-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>"Very responsive and great value." – Emma R.</p></div>
     </div>
   </section>
 
-  <!-- Areas -->
-  <section class="container reveal">
-    <h2 class="section-title">Areas we cover</h2>
-    <div class="area-grid">
-      <div class="area-item">🏠 North London</div>
-      <div class="area-item">🏠 East London</div>
-      <div class="area-item">🏠 South London</div>
-      <div class="area-item">🏠 West London</div>
+  <!-- WHY CHOOSE US + QUOTE FORM -->
+  <section id="contact" class="container reveal">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
+      <div>
+        <h2 class="section-title">Why <span>Choose Us</span></h2>
+        <ul style="list-style:none; font-size:1.05rem; line-height:2.4;">
+          <li><i class="fas fa-check-circle" style="color:#d4a373;"></i> Fully insured & licensed</li>
+          <li><i class="fas fa-check-circle" style="color:#d4a373;"></i> Free quotations, no hidden fees</li>
+          <li><i class="fas fa-check-circle" style="color:#d4a373;"></i> Experienced team, work guaranteed</li>
+          <li><i class="fas fa-check-circle" style="color:#d4a373;"></i> High-quality materials & fast response</li>
+          <li><i class="fas fa-check-circle" style="color:#d4a373;"></i> Local specialists across London</li>
+        </ul>
+      </div>
+      <div class="quote-form" id="quote-form">
+        <h3>Request a free quote</h3>
+        <div class="form-row"><input type="text" placeholder="Name" /><input type="tel" placeholder="Phone" /></div>
+        <input type="email" placeholder="Email" />
+        <input type="text" placeholder="Address" />
+        <select><option>Type of issue</option><option>Leak</option><option>Replacement</option><option>Inspection</option></select>
+        <div class="file-wrap"><i class="fas fa-upload"></i> Upload photo (max 5MB)</div>
+        <button class="btn btn-primary" style="width:100%; justify-content:center;"><i class="fas fa-paper-plane"></i> Send request</button>
+      </div>
     </div>
   </section>
 
-  <!-- Why choose -->
-  <section class="container reveal">
-    <h2 class="section-title">Why choose PeakRoof</h2>
-    <div class="why-grid">
-      <div class="why-item"><i class="fas fa-check-circle"></i> Fully insured</div>
-      <div class="why-item"><i class="fas fa-check-circle"></i> Free quotations</div>
-      <div class="why-item"><i class="fas fa-check-circle"></i> No hidden fees</div>
-      <div class="why-item"><i class="fas fa-check-circle"></i> Experienced team</div>
-      <div class="why-item"><i class="fas fa-check-circle"></i> Work guaranteed</div>
-      <div class="why-item"><i class="fas fa-check-circle"></i> High-quality materials</div>
-      <div class="why-item"><i class="fas fa-check-circle"></i> Fast response</div>
-      <div class="why-item"><i class="fas fa-check-circle"></i> Local specialists</div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="container reveal">
-    <h2 class="section-title">FAQ</h2>
-    <div class="faq-grid">
-      <div class="faq-item"><h4>How much does a new roof cost?</h4><p>Prices vary; we provide free quotes after inspection.</p></div>
-      <div class="faq-item"><h4>How long does replacement take?</h4><p>Typically 3-5 days for a standard house.</p></div>
-      <div class="faq-item"><h4>Do you offer emergency repairs?</h4><p>Yes, 24/7 emergency call-out service.</p></div>
-      <div class="faq-item"><h4>Are you insured & licensed?</h4><p>Fully insured and certified – we provide certificates.</p></div>
-    </div>
-  </section>
-
-  <!-- Map -->
-  <section class="container reveal">
-    <h2 class="section-title">Find us</h2>
-    <div class="map-wrap">
-      <div style="text-align:center;"><i class="fas fa-map-marker-alt" style="font-size:2rem;color:#d43b2b;"></i><br/>PeakRoof, 12 Rooftop Lane, London<br/><button class="btn-primary" style="margin-top:12px;padding:10px 28px;">Directions</button></div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div><h4 style="color:white;">PeakRoof</h4><p style="margin-top:12px;">Professional roofing services across London. 15+ years of excellence.</p></div>
-      <div><h5 style="color:white;">Services</h5><a href="#">Roof repairs</a><br/><a href="#">Replacements</a><br/><a href="#">Inspections</a></div>
-      <div><h5 style="color:white;">Areas</h5><a href="#">North London</a><br/><a href="#">South London</a><br/><a href="#">East London</a></div>
-      <div><h5 style="color:white;">Contact</h5><a href="tel:+441234567890">📞 (012) 345 6789</a><br/><a href="#">✉️ info@peakroof.co.uk</a></div>
+  <!-- FOOTER with areas, map, FAQ etc -->
+  <footer class="footer container-fluid" style="margin-top:40px;">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4 style="color:#d4a373;">PeakRoof</h4><p>Professional roofing · London</p><p><i class="fas fa-map-marker-alt"></i> 24 Bridge St, London</p><p><i class="fas fa-phone"></i> 01234 567890</p></div>
+        <div><h4>Areas</h4><a href="#">North London</a><br><a href="#">East London</a><br><a href="#">South London</a><br><a href="#">West London</a></div>
+        <div><h4>Support</h4><a href="#">FAQ</a><br><a href="#">Financing</a><br><a href="#">Blog</a><br><a href="#">Emergency</a></div>
+        <div><h4>Certifications</h4><p>✔️ Insured · Licensed · Guaranteed</p><p>⭐ Google 4.9 ★</p></div>
+      </div>
+      <hr style="border-color:#444; margin:30px 0 20px;">
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+        <span>© 2026 PeakRoof – Master the roof</span>
+        <span><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-youtube"></i></span>
+      </div>
     </div>
   </footer>
-
-  <!-- Sticky mobile -->
-  <div class="sticky-mobile">
-    <a href="tel:+441234567890" class="call"><i class="fas fa-phone-alt"></i> Call</a>
-    <a href="#"><i class="fas fa-file-invoice"></i> Quote</a>
-    <a href="#"><i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp</a>
-  </div>
 
   <script>
     // scroll reveal
     const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VERTEX // Premium Industrial Roofing Systems</title>
-    <!-- Google Fonts & Lucide Icons -->
+    <title>VIBZ // Architectural Roofing Systems</title>
+    <!-- Premium Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -12,13 +12,14 @@
     
     <style>
         :root {
-            --bg-obsidian: #090a0f;
-            --bg-card: rgba(18, 20, 29, 0.7);
-            --border-glass: rgba(255, 255, 255, 0.06);
-            --text-primary: #f3f4f6;
-            --text-secondary: #9ca3af;
-            --accent-electric: #00f2fe;
-            --accent-glow: rgba(0, 242, 254, 0.15);
+            /* Vibz Signature Identity Palette */
+            --brand-red: #ff1e27;
+            --brand-red-glow: rgba(255, 30, 39, 0.15);
+            --bg-obsidian: #08090c;
+            --bg-card: rgba(16, 18, 23, 0.75);
+            --border-glass: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: #8e939e;
             --font-display: 'Space Grotesk', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
         }
@@ -38,27 +39,27 @@
             line-height: 1.6;
         }
 
-        /* --- BACKGROUND LAYER --- */
-        .ambient-glow {
+        /* --- BACKGROUND MATRIX AMBIENT --- */
+        .ambient-red-glow {
             position: fixed;
-            top: -10%;
+            top: -15%;
             right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, rgba(0,0,0,0) 70%);
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(255, 30, 39, 0.07) 0%, rgba(0,0,0,0) 70%);
             z-index: -1;
             pointer-events: none;
         }
 
-        /* --- NAVIGATION --- */
+        /* --- IMMUTABLE HEADER --- */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 1.5rem 4%;
-            background: rgba(9, 10, 15, 0.75);
-            backdrop-filter: blur(12px);
+            padding: 1.25rem 4%;
+            background: rgba(8, 9, 12, 0.8);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-glass);
             display: flex;
             justify-content: space-between;
@@ -69,21 +70,18 @@
         .logo {
             font-family: var(--font-display);
             font-weight: 700;
-            font-size: 1.5rem;
-            letter-spacing: 2px;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 1.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
 
         .logo span {
-            color: var(--accent-electric);
+            color: var(--brand-red);
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 3rem;
             list-style: none;
         }
 
@@ -91,60 +89,65 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--accent-electric);
+            color: var(--text-primary);
         }
 
         .nav-cta {
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid var(--border-glass);
-            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 1px solid var(--brand-red);
+            padding: 0.75rem 1.75rem;
             color: var(--text-primary);
+            font-family: var(--font-display);
             font-weight: 600;
-            border-radius: 4px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .nav-cta:hover {
-            border-color: var(--accent-electric);
-            box-shadow: 0 0 15px var(--accent-glow);
+            background: var(--brand-red);
+            box-shadow: 0 0 25px var(--brand-red-glow);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO SUITE --- */
         .hero {
             min-height: 100vh;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             align-items: center;
             padding: 0 4%;
-            padding-top: 80px;
-            gap: 4rem;
+            padding-top: 100px;
+            gap: 5rem;
         }
 
         .hero-content h1 {
             font-family: var(--font-display);
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+            font-size: 4.5rem;
+            line-height: 1.05;
+            margin-bottom: 2rem;
             font-weight: 700;
+            letter-spacing: -1px;
         }
 
         .hero-content h1 span {
-            background: linear-gradient(135deg, #fff 0%, var(--text-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--brand-red);
         }
 
         .hero-content p {
             color: var(--text-secondary);
             font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            max-width: 500px;
+            margin-bottom: 3rem;
+            max-width: 520px;
         }
 
         .cta-group {
@@ -153,46 +156,52 @@
         }
 
         .btn-primary {
-            background: var(--text-primary);
-            color: var(--bg-obsidian);
-            padding: 1rem 2rem;
+            background: var(--brand-red);
+            color: var(--text-primary);
+            padding: 1.1rem 2.2rem;
             border: none;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             font-weight: 600;
-            border-radius: 4px;
+            border-radius: 2px;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            transition: transform 0.2s, opacity 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            opacity: 0.95;
+            box-shadow: 0 8px 30px rgba(255, 30, 39, 0.3);
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--text-primary);
-            padding: 1rem 2rem;
+            padding: 1.1rem 2.2rem;
             border: 1px solid var(--border-glass);
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             font-weight: 600;
-            border-radius: 4px;
+            border-radius: 2px;
             cursor: pointer;
             transition: all 0.3s;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             border-color: var(--text-secondary);
         }
 
         .hero-visual {
             position: relative;
-            height: 550px;
+            height: 600px;
             background: var(--bg-card);
             border: 1px solid var(--border-glass);
-            border-radius: 8px;
+            border-radius: 4px;
             overflow: hidden;
         }
 
@@ -200,58 +209,71 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.8;
+            opacity: 0.65;
             mix-blend-mode: luminosity;
+            transition: transform 0.5s;
         }
 
-        /* --- SERVICES --- */
+        .hero-visual:hover img {
+            transform: scale(1.03);
+        }
+
+        /* --- SERVICE MATRIX --- */
         .services {
-            padding: 8rem 4%;
+            padding: 10rem 4%;
+            border-top: 1px solid var(--border-glass);
         }
 
         .section-header {
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
         }
 
         .section-header h2 {
             font-family: var(--font-display);
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header h2 span {
+            color: var(--brand-red);
         }
 
         .section-header p {
             color: var(--text-secondary);
-            max-width: 600px;
+            max-width: 580px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .service-card {
             background: var(--bg-card);
             border: 1px solid var(--border-glass);
-            padding: 3rem 2rem;
-            border-radius: 6px;
-            transition: all 0.3s;
+            padding: 3.5rem 2.5rem;
+            border-radius: 2px;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .service-card:hover {
-            border-color: var(--accent-electric);
-            transform: translateY(-5px);
+            border-color: var(--brand-red);
+            transform: translateY(-4px);
         }
 
         .service-icon {
-            color: var(--accent-electric);
-            margin-bottom: 1.5rem;
+            color: var(--brand-red);
+            margin-bottom: 2rem;
         }
 
         .service-card h3 {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         .service-card p {
@@ -259,26 +281,27 @@
             font-size: 0.95rem;
         }
 
-        /* --- BOOKING APP ENGINE --- */
+        /* --- DYNAMIC BOOKING SYSTEM --- */
         .booking-section {
-            padding: 8rem 4%;
-            background: linear-gradient(180deg, var(--bg-obsidian) 0%, rgba(18,20,29,0.4) 50%, var(--bg-obsidian) 100%);
+            padding: 10rem 4%;
+            background: linear-gradient(180deg, var(--bg-obsidian) 0%, rgba(20, 10, 12, 0.3) 50%, var(--bg-obsidian) 100%);
+            border-top: 1px solid var(--border-glass);
         }
 
         .booking-container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             background: var(--bg-card);
             border: 1px solid var(--border-glass);
-            border-radius: 12px;
+            border-radius: 4px;
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             overflow: hidden;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(24px);
         }
 
         .booking-info {
-            padding: 4rem;
+            padding: 4.5rem;
             border-right: 1px solid var(--border-glass);
             display: flex;
             flex-direction: column;
@@ -286,119 +309,130 @@
         }
 
         .booking-form-side {
-            padding: 4rem;
+            padding: 4.5rem;
         }
 
         .form-group {
-            margin-bottom: 1.75rem;
+            margin-bottom: 2rem;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            font-family: var(--font-display);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
             color: var(--text-secondary);
         }
 
         .form-control {
             width: 100%;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-glass);
-            padding: 1rem;
+            padding: 1.1rem;
             color: var(--text-primary);
             font-family: var(--font-body);
-            border-radius: 4px;
-            transition: border-color 0.3s;
+            border-radius: 2px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
         }
 
         .form-control:focus {
             outline: none;
-            border-color: var(--accent-electric);
+            border-color: var(--brand-red);
+            background: rgba(255, 30, 39, 0.02);
         }
 
         .options-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 1.25rem;
         }
 
         .option-tile {
             border: 1px solid var(--border-glass);
             background: rgba(255, 255, 255, 0.01);
-            padding: 1rem;
+            padding: 1.25rem;
             text-align: center;
-            border-radius: 4px;
+            border-radius: 2px;
             cursor: pointer;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
             transition: all 0.2s;
-            font-size: 0.9rem;
         }
 
         .option-tile.active {
-            border-color: var(--accent-electric);
-            background: var(--accent-glow);
-            color: var(--accent-electric);
+            border-color: var(--brand-red);
+            background: var(--brand-red-glow);
+            color: var(--text-primary);
         }
 
-        /* --- FLOATING NAVIGATION BAR --- */
+        /* --- OVERLAY FIXED COMMUNICATION ACTION BAR --- */
         .floating-action-bar {
             position: fixed;
-            bottom: 2rem;
+            bottom: 2.5rem;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(18, 20, 29, 0.85);
+            background: rgba(16, 18, 23, 0.9);
             border: 1px solid var(--border-glass);
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
+            padding: 0.9rem 2.5rem;
+            border-radius: 2px;
             display: flex;
             align-items: center;
-            gap: 2rem;
-            backdrop-filter: blur(16px);
+            gap: 2.5rem;
+            backdrop-filter: blur(20px);
             z-index: 999;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
 
         .bar-link {
             color: var(--text-secondary);
             text-decoration: none;
+            font-family: var(--font-display);
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             transition: color 0.2s;
         }
 
         .bar-link:hover {
-            color: var(--accent-electric);
+            color: var(--text-primary);
         }
 
         .bar-divider {
             width: 1px;
-            height: 20px;
+            height: 22px;
             background: var(--border-glass);
         }
 
-        /* --- FOOTER --- */
+        /* --- FOOTER FRAME --- */
         footer {
-            padding: 4rem 4%;
+            padding: 4.5rem 4%;
             border-top: 1px solid var(--border-glass);
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
-        /* --- RESPONSIVE DESIGN --- */
+        /* --- RESPONSIVE STRUCTURAL OVERRIDES --- */
         @media (max-width: 968px) {
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding-top: 140px;
+                padding-top: 150px;
+                gap: 3rem;
+            }
+            .hero-content h1 {
+                font-size: 3.2rem;
             }
             .hero-content p {
                 margin: 0 auto 2.5rem auto;
@@ -412,147 +446,149 @@
             .booking-info {
                 border-right: none;
                 border-bottom: 1px solid var(--border-glass);
-                padding: 2.5rem;
+                padding: 3rem;
             }
             .booking-form-side {
-                padding: 2.5rem;
+                padding: 3rem;
             }
-            .nav-links {
+            .nav-links, .bar-divider, .floating-action-bar .bar-link:not(:last-child) {
                 display: none;
+            }
+            .floating-action-bar {
+                padding: 0.8rem 2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow"></div>
+    <div class="ambient-red-glow"></div>
 
-    <!-- MAIN HEADER NAVIGATION -->
+    <!-- MAIN HEADER BAR -->
     <nav>
         <div class="logo">
-            <i data-lucide="layers"></i>VERTEX<span>.</span>
+            VIBZ<span>.</span>ROOFING
         </div>
         <ul class="nav-links">
-            <li><a href="#hero">System</a></li>
+            <li><a href="#hero">Concept</a></li>
             <li><a href="#services">Capabilities</a></li>
-            <li><a href="#booking">Engine</a></li>
+            <li><a href="#booking">Allocation</a></li>
         </ul>
-        <button class="nav-cta" onclick="document.getElementById('booking').scrollIntoView()">Initialize Project</button>
+        <button class="nav-cta" onclick="document.getElementById('booking').scrollIntoView()">Secure Date</button>
     </nav>
 
-    <!-- HERO COMPONENT -->
+    <!-- HERO ENGINE LAYER -->
     <section class="hero" id="hero">
         <div class="hero-content">
-            <h1><span>Structural Precision.</span><br>Architectural Integrity.</h1>
-            <p>Deploying advanced, industrial-grade roofing matrices engineered for hyper-modern architecture and severe atmospheric resilience.</p>
+            <h1>Precision Above. Architectural <span>Lines.</span></h1>
+            <p>Deploying severe-weather engineered monolithic frameworks and industrial profile matching. Built for structural longevity and minimalist design specifications.</p>
             <div class="cta-group">
                 <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView()">
-                    Secure Consultation <i data-lucide="arrow-right"></i>
+                    Initialize Project <i data-lucide="arrow-right"></i>
                 </button>
-                <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView()">View Matrix</button>
+                <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView()">System Matrix</button>
             </div>
         </div>
         <div class="hero-visual">
-            <!-- Structured object/architecture approach over plain human stock photos -->
-            <img src="https://www.flushthefashion.com/wp-content/uploads/2026/06/2.jpg" alt="Minimalist architectural roof profile lines against overcast sky">
+            <img src="https://www.flushthefashion.com/wp-content/uploads/2026/06/2.jpg" alt="Minimalist geometric roof structures and sleek zinc clad profiles">
         </div>
     </section>
 
-    <!-- CAPABILITIES / SERVICES SECTION -->
+    <!-- CAPABILITIES MODULE -->
     <section class="services" id="services">
         <div class="section-header">
-            <h2>System Capabilities</h2>
-            <p>High-end build formats optimized for long-cycle durability, modern architectural profiles, and clean industrial alignment.</p>
+            <h2>Capabilities <span>Matrix</span></h2>
+            <p>Premium envelope systems optimized for long-cycle waterproofing, clean linear geometric aesthetics, and structural envelope resilience.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <i data-lucide="shield" class="service-icon" size="32"></i>
-                <h3>Liquid Carbon Enclosures</h3>
-                <p>Seamless monolithic waterproof barrier membranes configured for ultra-flat modern roofs and technical drainage channels.</p>
+                <i data-lucide="shield-alert" class="service-icon" size="32"></i>
+                <h3>Monolithic Carbon Barriers</h3>
+                <p>Fully seamless, cold-applied structural waterproofing membranes designed exclusively for flat roof profiles and complex parapet detailing.</p>
             </div>
             <div class="service-card">
-                <i data-lucide="cpu" class="service-icon" size="32"></i>
-                <h3>Solar Dynamic Arrays</h3>
-                <p>Photovoltaic roofing integrated structurally level into standing seams, maintaining pure profile vectors while maximizing energy catch.</p>
+                <i data-lucide="activity" class="service-icon" size="32"></i>
+                <h3>Structural Zinc Seaming</h3>
+                <p>Mechanically locked standing-seam installations utilizing hidden micro-fasteners to ensure flawless linear profiles without envelope compromise.</p>
             </div>
             <div class="service-card">
-                <i data-lucide="box" class="service-icon" size="32"></i>
-                <h3>Engineered Zinc Seams</h3>
-                <p>Pure mechanical standing-seam zinc and obsidian composite cladding featuring implicit ventilation matrices and zero external fasteners.</p>
+                <i data-lucide="terminal" class="service-icon" size="32"></i>
+                <h3>Sleek Integration Arrays</h3>
+                <p>Flush-fit roof component matrices, engineered solar interfaces, and hidden linear rainwater drainage channels built flush with the architectural surface.</p>
             </div>
         </div>
     </section>
 
-    <!-- LIVE BOOKING & SPECIFICATION ENGINE -->
+    <!-- LIVE FIELD SPECIFICATION CONTAINER -->
     <section class="booking-section" id="booking">
         <div class="booking-container">
             <div class="booking-info">
                 <div>
-                    <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 1rem;">Configuration Engine</h2>
+                    <h2 style="font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 1.5rem; letter-spacing: -0.5px;">Allocation Engine</h2>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;">Select structural metrics to initialize site engineering analysis and dispatch scheduling parameters.</p>
                 </div>
                 <div style="margin-top: 2rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <i data-lucide="check-circle" style="color: var(--accent-electric)"></i>
-                        <span style="font-size: 0.9rem;">Direct engineer assessment scheduling</span>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+                        <i data-lucide="check" style="color: var(--brand-red)"></i>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary);">Direct surveyor assignment dispatch within 2 hours</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <i data-lucide="check-circle" style="color: var(--accent-electric)"></i>
-                        <span style="font-size: 0.9rem;">Comprehensive asset diagnostic document included</span>
+                        <i data-lucide="check" style="color: var(--brand-red)"></i>
+                        <span style="font-size: 0.9rem; color: var(--text-secondary);">Complete ISO architectural compliance guarantee documentation</span>
                     </div>
                 </div>
             </div>
             <div class="booking-form-side">
                 <form id="specificationForm" onsubmit="handleFormSubmit(event)">
                     <div class="form-group">
-                        <label>Matrix Assignment</label>
+                        <label>Envelope Designation</label>
                         <div class="options-grid">
-                            <div class="option-tile active" onclick="setMatrix(this, 'Commercial Flat')">Commercial Flat</div>
-                            <div class="option-tile" onclick="setMatrix(this, 'Residential Seam')">Residential Seam</div>
+                            <div class="option-tile active" onclick="setMatrix(this, 'Flat Structural')">Flat Structural</div>
+                            <div class="option-tile" onclick="setMatrix(this, 'Standing Seam')">Standing Seam</div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Deployment Coordinate (Postcode)</label>
-                        <input type="text" class="form-control" placeholder="e.g. EC1A 1BB" required>
+                        <label>Deployment Coordinate (UK Postcode)</label>
+                        <input type="text" class="form-control" placeholder="e.g. W1A 1AA" required>
                     </div>
                     <div class="form-group">
                         <label>Target Execution Window</label>
                         <input type="date" class="form-control" required>
                     </div>
                     <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
-                        Lock Allocation <i data-lucide="lock"></i>
+                        Lock System Allocation <i data-lucide="corner-down-right"></i>
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FLOATING COMMUNICATION ACTION BAR -->
+    <!-- BOTTOM POSITIONED FLOATING CONTROL HUB -->
     <div class="floating-action-bar">
         <a href="tel:+442079460958" class="bar-link">
-            <i data-lucide="phone" size="16"></i> Direct Line
+            <i data-lucide="phone-call" size="15" style="color: var(--brand-red);"></i> +44 20 7946 0958
         </a>
         <div class="bar-divider"></div>
         <a href="https://wa.me/442079460958" target="_blank" class="bar-link" style="color: #25D366;">
-            <i data-lucide="message-square" size="16"></i> WhatsApp Realtime
-        </a> 
+            <i data-lucide="messages-square" size="15"></i> Realtime WhatsApp
+        </a>
         <div class="bar-divider"></div>
-        <a href="#booking" class="bar-link" style="color: var(--accent-electric);">
-            <i data-lucide="calendar" size="16"></i> Secure Appt
+        <a href="#booking" class="bar-link" style="color: var(--brand-red);">
+            <i data-lucide="calendar" size="15"></i> Allocation Engine
         </a>
     </div>
 
-    <!-- FOOTER -->
+    <!-- SYSTEM FOOTER -->
     <footer>
-        <p>&copy; 2026 VERTEX SYSTEMS LTD. DATA ENCRYPTED COMPLIANT ISO-27001.</p>
-        <p style="font-size: 0.8rem; letter-spacing: 1px;">BUILD VERSION 4.0.26</p>
+        <p>&copy; 2026 VIBZ ROOFING SYSTEMS. ALL RIGID GEOMETRIES SECURED.</p>
+        <p style="font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 2px; color: var(--brand-red);">SYS_VER_4.1</p>
     </footer>
 
-    <!-- Initialize Icons & Simple Booking Logic -->
+    <!-- Run Logic & Create Vector Icons -->
     <script>
         lucide.createIcons();
         
-        let selectedMatrix = 'Commercial Flat';
+        let selectedMatrix = 'Flat Structural';
 
         function setMatrix(element, val) {
             document.querySelectorAll('.option-tile').forEach(el => el.classList.remove('active'));
@@ -562,7 +598,7 @@
 
         function handleFormSubmit(e) {
             e.preventDefault();
-            alert(`Configuration Locked Successfully.\nSystem Parameter: ${selectedMatrix}\nOur structural deployment team will contact you within 60 minutes to confirm engineering coordinates.`);
+            alert(`Project Scope Logged Successfully.\nSystem Parameter: ${selectedMatrix}\nOur architectural surveyor team will review your deployment coordinate within 60 minutes.`);
         }
     </script>
 </body>
